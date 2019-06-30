@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>POMODORO CLOCK</title>
-  </head>
-  <body>
 
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>POMODORO CLOCK</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="svg__wrapper">
+      <svg
+        version="1.1" baseProfile="full"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        width="500"
+        height="500"
+        transform="rotate(-90)"
+        >
+        <circle id="timer_circle_boundary"cx="250" cy="250" r="190" stroke-width="15" fill="transparent" stroke-linecap="round" />
+        <circle id="timer_circle" cx="250" cy="250" r="195" stroke-width="5" fill="transparent" stroke-linecap="round" />
+        <text class="counter__txt" x="230" y="-230" transform="rotate(90)" ></text>
+      </svg>
+    </div>
+
+    <div class="controls">
+      <button class="start__timer button">Start</button>
+      <button class="pause__timer button">Pause</button>
+      <button class="reset__timer button">Reset</button>
+    </div>
+
+    <div class="session__timer">
+      <p class="session__time__display">
+        20 mins
+      </p>
+      <h4 class="h-4">Session Time</h4>
+      <div class="buttons">
+        <button class="add__session__time button">+</button>
+        <button class="sub__session__time button">-</button>
+      </div>
+    </div>
+    <div class="break__timer">
+      <p class="break__time__display">
+        10 mins
+      </p>
+      <h4 class="h-4">Break Time</h4>
+      <div class="buttons">
+        <button class="add__break__time button">+</button>
+        <button class="sub__break__time button">-</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/plugins/CSSPlugin.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/easing/EasePack.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenLite.min.js" defer></script>
+  <script src="index.js" charset="utf-8" defer></script>
+</body>
+
 </html>

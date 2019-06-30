@@ -1,0 +1,28 @@
+$circleAnimDur: 0s;
+
+body {
+  font-family: 'Noah', sans-serif;
+}
+
+#timer_circle {
+  stroke-dasharray: 753px;
+  stroke: lightblue;
+}
+
+.button {
+  padding: 0.75em;
+}
+
+.circle__animation {
+  animation-name: reduce_circle;
+  animation-duration: $circleAnimDur;
+}
+
+@keyframes reduce_circle {
+  0% {
+    stroke-dashoffset: 0px;
+  }
+   100% {
+    stroke-dashoffset: 753px;
+  }
+}

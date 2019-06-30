@@ -1,3 +1,33 @@
+:root {
+  --circAnimDur: 0s;
+  --circumference: 0px;
+}
+
+.wrapper {
+  width: 50vw;
+  position: relative;
+  margin: 0 auto;
+}
 
 
-/*# sourceMappingURL=style.css.map */
+body {
+  font-family: "Noah", sans-serif;
+}
+
+#timer_circle {
+  stroke-dasharray: var(--circumference);
+  stroke: hotpink;
+}
+
+#timer_circle_boundary {
+  stroke: lightblue;
+}
+
+.button {
+  padding: 0.75em;
+}
+
+.circle__animation {
+  transition: var(--circAnimDur);
+  stroke-dashoffset: var(--circumference);
+}
