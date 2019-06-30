@@ -12,15 +12,19 @@
 
 body {
   font-family: "Noah", sans-serif;
+  background: #7E7E7E;
 }
 
 #timer_circle {
   stroke-dasharray: var(--circumference);
-  stroke: hotpink;
 }
 
 #timer_circle_boundary {
   stroke: lightblue;
+}
+
+#counter_text {
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.05);
 }
 
 .button {

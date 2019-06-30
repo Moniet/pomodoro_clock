@@ -1,5 +1,6 @@
 const circleEl = document.querySelector('#timer_circle');
-const counter = document.querySelector('.counter__txt');
+const behindCirc = document.querySelector('#timer_circle_behind');
+const counter = document.querySelector('#counter_text');
 const start = document.querySelector('.start__timer');
 const pause = document.querySelector('.pause__timer');
 const reset = document.querySelector('.reset__timer');
@@ -84,6 +85,7 @@ function resetTimer() {
 
 	circleEl.style.strokeDashoffset = 0;
 	tween.progress(0);
+	tween.kill();
 }
 
 function pauseTimer() {
