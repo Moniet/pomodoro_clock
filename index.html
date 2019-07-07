@@ -9,109 +9,134 @@
 </head>
 
 <body>
-  <div class="todo__container">
-    <h1>TO DO LIST</h1>
-    <ul class="todo__list__wrapper">
-      <li class=""></li>
-    </ul>
-    <button class="add__list__btn"></button>
-  </div>
-  <div class="wrapper">
-    <div class="svg__wrapper">
 
-      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"
-        stroke-miterlimit="1.5">
-        <path fill="none" d="M0 0h500v500H0z" />
-        <g serif:id="Artboard1">
-          <circle cx="253.835" cy="250.959" r="231.373" fill="#252846" stroke="#252846" stroke-width="10" />
-          <circle class="svg__shadow" cx="253.835" cy="250.959" r="236.35" fill="none" />
-          <clipPath id="a">
-            <circle cx="253.835" cy="250.959" r="236.35" />
-          </clipPath>
-          <g clip-path="url(#a)">
-            <ellipse cx="256.021" cy="250.959" rx="238.536" ry="243.118" fill="none" />
-            <clipPath id="b">
-              <ellipse cx="256.021" cy="250.959" rx="238.536" ry="243.118" />
-            </clipPath>
-            <g clip-path="url(#b)">
-              <path d="M35.093 383.46l103.489-68.825 101.227 29.823 92.528-72.139 92.923 21.359 69.298-42.719v296.618L51.986 536.796 35.093 383.46z" fill="#3b4070" />
-              <path d="M138.615 314.635l-7.467 24.584 20.155 19.56 4.226 20.92 27.837 14.33 32.592-21.797 9.548-14.078 14.305-13.696-101.196-29.823z" fill="#181818" fill-opacity=".51" />
-              <path d="M332.343 272.319l-22.006 35.868 8.252 20.553-7.859 27.808 12.968 33.047 50.915-43.525 29.032-24.413 27.324 21.073 47.91-2.131 11.199-31.366-24.369-12.865-5.85 1.722-1.439-1.181-14.999 7.107-18.159-10.337-92.919-21.36z"
-                fill="#1a1a1a" fill-opacity=".5" />
-              <path d="M494.558 338.413l-28.893-16.743-23.622 18.636-38.16-20.432-100.016 82.618-86.201-33.047-50.218 39.092-127.72-39.495-9.095 199.491 234.533-14.342 200.427-12.257 28.965-203.521z" fill="#585fa5" />
-              <path d="M403.886 319.873l-3.932 17.331 3.954 6.851-7.118 20.151 6.722 20.553 11.468 10.479 4.349 16.12 6.794 12.858 32.353-39.457 12.809-28.127c-22.852-12.959-45.214-25.011-67.399-36.759z" fill-opacity=".23" />
-              <path d="M465.646 321.657l-2.821 7.083 1.582 3.628-2.768 8.06-2.373 5.239-.395 4.03 12.226 6.851 10.616-25.536-16.067-9.355z" fill="#2e2e31" fill-opacity=".53" />
-              <path d="M217.666 369.445l-3.757 23.155 16.986 10.871 5.719 15.282 13.26 8.107 18.707-1.433 12.149-10.553 16.005-6.337 7.132-6.045-86.201-33.047z" fill="#1b1717" fill-opacity=".31" />
+    <div class="wrapper" role="main">
+      <div class="todo__wrapper todo_width">
+        <div class="todo__container">
+          <h1 class="f-1 white bold">TO DO LIST</h1>
+          <ul class="todo__list__wrapper">
+            <li class="list__item">
+              <div class="list__content" contenteditable="true">
+                add list item
+              </div>
+              <button class="remove__item__btn reset__btn btn pointer">
+                <img src="assets/delete_list_btn.svg" alt="delete list item button">
+              </button>
+            </li>
+          </ul>
+          <button class="add__list__btn reset__btn pointer">
+            <img src="assets/list_add_btn.svg" alt="make new list item button" />
+          </button>
+        </div>
+        <button class="close__open__list pointer"><</button>
+      </div>
+
+      <div class="timer__wrapper">
+        <div class="svg__wrapper">
+
+          <svg viewBox="0 0 500 500"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:serif="http://www.serif.com/"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="1.5">
+            <path fill="none" d="M0 0h500v500H0z" />
+            <g serif:id="Artboard1">
+              <circle cx="253.835" cy="250.959" r="231.373" fill="#252846" stroke="#252846" stroke-width="10" />
+              <circle class="svg__shadow" cx="253.835" cy="250.959" r="236.35" fill="none" />
+              <clipPath id="a">
+                <circle cx="253.835" cy="250.959" r="236.35" />
+              </clipPath>
+              <g clip-path="url(#a)">
+                <ellipse cx="256.021" cy="250.959" rx="238.536" ry="243.118" fill="none" />
+                <clipPath id="b">
+                  <ellipse cx="256.021" cy="250.959" rx="238.536" ry="243.118" />
+                </clipPath>
+                <g clip-path="url(#b)">
+                  <path d="M35.093 383.46l103.489-68.825 101.227 29.823 92.528-72.139 92.923 21.359 69.298-42.719v296.618L51.986 536.796 35.093 383.46z" fill="#3b4070" />
+                  <path d="M138.615 314.635l-7.467 24.584 20.155 19.56 4.226 20.92 27.837 14.33 32.592-21.797 9.548-14.078 14.305-13.696-101.196-29.823z" fill="#181818" fill-opacity=".51" />
+                  <path d="M332.343 272.319l-22.006 35.868 8.252 20.553-7.859 27.808 12.968 33.047 50.915-43.525 29.032-24.413 27.324 21.073 47.91-2.131 11.199-31.366-24.369-12.865-5.85 1.722-1.439-1.181-14.999 7.107-18.159-10.337-92.919-21.36z"
+                    fill="#1a1a1a" fill-opacity=".5" />
+                  <path d="M494.558 338.413l-28.893-16.743-23.622 18.636-38.16-20.432-100.016 82.618-86.201-33.047-50.218 39.092-127.72-39.495-9.095 199.491 234.533-14.342 200.427-12.257 28.965-203.521z" fill="#585fa5" />
+                  <path d="M403.886 319.873l-3.932 17.331 3.954 6.851-7.118 20.151 6.722 20.553 11.468 10.479 4.349 16.12 6.794 12.858 32.353-39.457 12.809-28.127c-22.852-12.959-45.214-25.011-67.399-36.759z" fill-opacity=".23" />
+                  <path d="M465.646 321.657l-2.821 7.083 1.582 3.628-2.768 8.06-2.373 5.239-.395 4.03 12.226 6.851 10.616-25.536-16.067-9.355z" fill="#2e2e31" fill-opacity=".53" />
+                  <path d="M217.666 369.445l-3.757 23.155 16.986 10.871 5.719 15.282 13.26 8.107 18.707-1.433 12.149-10.553 16.005-6.337 7.132-6.045-86.201-33.047z" fill="#1b1717" fill-opacity=".31" />
+                </g>
+              </g>
+              <text id="counter_text" x="140.656" y="178.746" font-family="'PTMono-Bold','PT Mono',monospace" font-weight="700" font-size="74.485" fill="#fffefe" stroke="#414141" stroke-width=".33" stroke-linecap="butt" stroke-miterlimit="2">
+                25:00
+              </text>
+              <use xlink:href="#_Image3" x="56.927" y="221.165" width="58.347" height="56.16" transform="scale(.98894 .98526)" />
+              <ellipse cx="85.471" cy="245.986" rx="29.308" ry="28.21" fill="#fff" fill-opacity=".02" />
+              <use xlink:href="#_Image4" x="53.737" y="216.152" width="65.037" height="62.576" transform="scale(.9854 .99327)" />
+              <ellipse cx="85.471" cy="245.986" rx="32.649" ry="31.426" fill="#fff" fill-opacity=".01" />
+              <ellipse cx="85.471" cy="245.986" rx="24.959" ry="24.602" fill="#fff" fill-opacity=".05" />
+              <ellipse cx="85.471" cy="245.986" rx="20.062" ry="19.775" fill="url(#_Linear5)" />
+              <g class="stars">
+                <circle cx="167.346" cy="249.616" r=".575" fill="#fff" />
+                <circle cx="244.822" cy="273.396" r="1.342" fill="#fff" />
+                <ellipse cx="278.256" cy="241.645" rx=".258" ry=".274" fill="#fff" />
+                <ellipse cx="404.826" cy="214.796" rx=".258" ry=".274" fill="#fff" />
+                <ellipse cx="216.766" cy="218.494" rx=".134" ry=".136" fill="#fff" />
+                <ellipse cx="181.987" cy="284.82" rx=".258" ry=".274" fill="#fff" />
+                <circle cx="333.037" cy="245.206" r=".575" fill="#fff" />
+                <circle cx="397.473" cy="245.781" r=".575" fill="#fff" />
+                <path d="M370.529 214.426c.264-.053.522.119.575.384.053.264-.119.522-.384.575-.264.053-.522-.119-.575-.383-.053-.265.119-.523.384-.576z" fill="#fff" />
+              </g>
+              <g>
+                <circle id="timer_circle" r="231.373" fill="none" stroke="#80f2e7" stroke-width="10" cx="-250.835" cy="253.959" stroke-linecap="square" style="stroke-dashoffset: 0px;"></circle>
+              </g>
             </g>
-          </g>
-          <text id="counter_text" x="140.656" y="178.746" font-family="'PTMono-Bold','PT Mono',monospace" font-weight="700" font-size="74.485" fill="#fffefe" stroke="#414141" stroke-width=".33" stroke-linecap="butt" stroke-miterlimit="2">
-            25:00
-          </text>
-          <use xlink:href="#_Image3" x="56.927" y="221.165" width="58.347" height="56.16" transform="scale(.98894 .98526)" />
-          <ellipse cx="85.471" cy="245.986" rx="29.308" ry="28.21" fill="#fff" fill-opacity=".02" />
-          <use xlink:href="#_Image4" x="53.737" y="216.152" width="65.037" height="62.576" transform="scale(.9854 .99327)" />
-          <ellipse cx="85.471" cy="245.986" rx="32.649" ry="31.426" fill="#fff" fill-opacity=".01" />
-          <ellipse cx="85.471" cy="245.986" rx="24.959" ry="24.602" fill="#fff" fill-opacity=".05" />
-          <ellipse cx="85.471" cy="245.986" rx="20.062" ry="19.775" fill="url(#_Linear5)" />
-          <g class="stars">
-            <circle cx="167.346" cy="249.616" r=".575" fill="#fff" />
-            <circle cx="244.822" cy="273.396" r="1.342" fill="#fff" />
-            <ellipse cx="278.256" cy="241.645" rx=".258" ry=".274" fill="#fff" />
-            <ellipse cx="404.826" cy="214.796" rx=".258" ry=".274" fill="#fff" />
-            <ellipse cx="216.766" cy="218.494" rx=".134" ry=".136" fill="#fff" />
-            <ellipse cx="181.987" cy="284.82" rx=".258" ry=".274" fill="#fff" />
-            <circle cx="333.037" cy="245.206" r=".575" fill="#fff" />
-            <circle cx="397.473" cy="245.781" r=".575" fill="#fff" />
-            <path d="M370.529 214.426c.264-.053.522.119.575.384.053.264-.119.522-.384.575-.264.053-.522-.119-.575-.383-.053-.265.119-.523.384-.576z" fill="#fff" />
-          </g>
-          <g>
-            <circle id="timer_circle" r="231.373" fill="none" stroke="#80f2e7" stroke-width="10" cx="-250.835" cy="253.959" stroke-linecap="square" style="stroke-dashoffset: 0px;"></circle>
-          </g>
-        </g>
-        <defs>
-          <image id="_Image3" width="59" height="57"
-            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAA5CAYAAACI7VO4AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABQUlEQVRoge2bSw7EIAhAYe5/Z2czkPFTqxUbBN62LfCCaZqKCJtIKeHTZxExSdbCcSWDDQi2rnfFJMVFZBuSEnEzSQnppaIKSdFVUqbiJAvSjwp8UbJKzUkfSE8X+if6pmRVBsC88HDBSiRLpqSHClcqSgwL3xavXJQYEu4KHCJK3ApfShwmSnSFmyKHihKXwp/OQyeKAnTqrmRXPuA10fLAixssCFfLubeMzcEdNNZVIuuuv84a7SrB3XXVWVeyaHwJE/5eUCFrFZeyll9OAD8/l511QchahWS3bBEqIr6gTBOyVok/FVZxJRu/Uq0S2x9WqTpopLvNPdqqs7vmBt9mdjP6VOmYqQCIaZkiwhnC63NQHEm3sNyEG0fUKSw/u5hF1yG9dyo1y+Rl3jjL7GGSvKrEwxmBEhenP1poPNfzBQJ0pFLXLq8mAAAAAElFTkSuQmCC" />
-          <image id="_Image4" width="66" height="63"
-            xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA/CAYAAABU6B73AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABVUlEQVR4nO2cWxKDIBAE3dz/zuRnJoUEFBGRx/RfLB9sO1qlsrGtEc45K9nOzFztsUSP8+TOS4tP8aSU6iJqF5+itpRqg24lIKSWkNuDf0tAyF0hxUX0IiCkVEhRMb1KICUyLhfUuwRyVUZ2UaMICMkVklXcqBJIjozTAkeXQM5kfFoNpHcOz/YsaSBHqUgWOpsEkpIRLXZWCSQmQ/cI8HfmZ08DCVOxK3oVCcSXoUsD/BKwWhoIU6FEAIkAtm3rXhbEzJwSASQCSASw1e8PRIkAEgEkAkgEkAggEUAigEQAiQASAfQYvukxfIdEAIkAeoutt9h7JALokx9QIoC+hvN3bKXZZWiiyAGaQ8XlRxvNJqNoVh2ZRYYmnGaiudhcJ3dno8qoOjvfZxQhj/Vr+PQuo0kHD+lVRtOeLp9ehLzW5ReyfN9nyPKdwDGW7g1P0fu/BXwBgIuTWEDREHkAAAAASUVORK5CYII=" />
-          <linearGradient id="_Linear5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(65.4088 245.986) scale(40.1241)">
-            <stop offset="0" stop-color="#fff" stop-opacity=".8" />
-            <stop offset="1" stop-color="#b3b3b3" stop-opacity=".8" />
-          </linearGradient>
-        </defs>
-      </svg>
+            <defs>
+              <image id="_Image3" width="59" height="57"
+                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAA5CAYAAACI7VO4AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABQUlEQVRoge2bSw7EIAhAYe5/Z2czkPFTqxUbBN62LfCCaZqKCJtIKeHTZxExSdbCcSWDDQi2rnfFJMVFZBuSEnEzSQnppaIKSdFVUqbiJAvSjwp8UbJKzUkfSE8X+if6pmRVBsC88HDBSiRLpqSHClcqSgwL3xavXJQYEu4KHCJK3ApfShwmSnSFmyKHihKXwp/OQyeKAnTqrmRXPuA10fLAixssCFfLubeMzcEdNNZVIuuuv84a7SrB3XXVWVeyaHwJE/5eUCFrFZeyll9OAD8/l511QchahWS3bBEqIr6gTBOyVok/FVZxJRu/Uq0S2x9WqTpopLvNPdqqs7vmBt9mdjP6VOmYqQCIaZkiwhnC63NQHEm3sNyEG0fUKSw/u5hF1yG9dyo1y+Rl3jjL7GGSvKrEwxmBEhenP1poPNfzBQJ0pFLXLq8mAAAAAElFTkSuQmCC" />
+              <image id="_Image4" width="66" height="63"
+                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAA/CAYAAABU6B73AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABVUlEQVR4nO2cWxKDIBAE3dz/zuRnJoUEFBGRx/RfLB9sO1qlsrGtEc45K9nOzFztsUSP8+TOS4tP8aSU6iJqF5+itpRqg24lIKSWkNuDf0tAyF0hxUX0IiCkVEhRMb1KICUyLhfUuwRyVUZ2UaMICMkVklXcqBJIjozTAkeXQM5kfFoNpHcOz/YsaSBHqUgWOpsEkpIRLXZWCSQmQ/cI8HfmZ08DCVOxK3oVCcSXoUsD/BKwWhoIU6FEAIkAtm3rXhbEzJwSASQCSASw1e8PRIkAEgEkAkgEkAggEUAigEQAiQASAfQYvukxfIdEAIkAeoutt9h7JALokx9QIoC+hvN3bKXZZWiiyAGaQ8XlRxvNJqNoVh2ZRYYmnGaiudhcJ3dno8qoOjvfZxQhj/Vr+PQuo0kHD+lVRtOeLp9ehLzW5ReyfN9nyPKdwDGW7g1P0fu/BXwBgIuTWEDREHkAAAAASUVORK5CYII=" />
+              <linearGradient id="_Linear5" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(65.4088 245.986) scale(40.1241)">
+                <stop offset="0" stop-color="#fff" stop-opacity=".8" />
+                <stop offset="1" stop-color="#b3b3b3" stop-opacity=".8" />
+              </linearGradient>
+            </defs>
+          </svg>
 
-    </div>
-    <div class="controls shadow">
-      <button id="start_button" class="startPause__timer start_stop_button">
-        <img src="assets/pomodoro_startButton.svg" class="start_img" aria-labelledby="start_button" />
-        <img src="assets/pomodoro_pauseButton.svg" class="pause_img hidden" aria-labelledby="start_button" />
-      </button>
-      <button class="reset__timer start_stop_button">
-        <img src="assets/pomodoro_resetButton.svg" class="reset_img" aria-labelledby="start_button" />
-      </button>
-    </div>
-    <div class="timer__controls shadow">
-      <div class="timer__controls__wrapper">
-        <p class="controls__display session__time__display space">
-          25
-        </p>
-        <h4 class="h-4 space">session</h4>
-        <div class="buttons">
-          <button class="add__session__time reset__btn btn pointer">+</button>
-          <button class="sub__session__time reset__btn btn pointer">-</button>
+        </div>
+        <div class="controls shadow">
+          <button id="start_button" class="startPause__timer start_stop_button">
+            <img src="assets/pomodoro_startButton.svg" class="start_img" aria-labelledby="start_button" />
+            <img src="assets/pomodoro_pauseButton.svg" class="pause_img hidden" aria-labelledby="start_button" />
+          </button>
+          <button class="reset__timer start_stop_button">
+            <img src="assets/pomodoro_resetButton.svg" class="reset_img" aria-labelledby="start_button" />
+          </button>
+        </div>
+        <div class="timer__controls shadow">
+          <div class="timer__controls__wrapper">
+            <p class="controls__display session__time__display space">
+              25
+            </p>
+            <h4 class="f-4 space">session</h4>
+            <div class="buttons">
+              <button class="add__session__time reset__btn btn pointer">+</button>
+              <button class="sub__session__time reset__btn btn pointer">-</button>
+            </div>
+          </div>
+          <div class="timer__controls__wrapper">
+            <p class="controls__display break__time__display space">
+              10
+            </p>
+            <h4 class="f-4 space">break</h4>
+            <div class="buttons">
+              <button class="add__break__time reset__btn btn pointer">+</button>
+              <button class="sub__break__time reset__btn btn pointer">-</button>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="timer__controls__wrapper">
-        <p class="controls__display break__time__display space">
-          10
-        </p>
-        <h4 class="h-4 space">break</h4>
-        <div class="buttons">
-          <button class="add__break__time reset__btn btn pointer">+</button>
-          <button class="sub__break__time reset__btn btn pointer">-</button>
-        </div>
-      </div>
-    </div>
+    <footer class="footer">
+    </footer>
   </div>
   <script src="index.js" charset="utf-8" defer></script>
 </body>

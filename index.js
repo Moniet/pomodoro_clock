@@ -12,20 +12,26 @@ const subBreakBtn = document.querySelector('.sub__break__time');
 const sessionDisplay = document.querySelector('.session__time__display');
 const breakDisplay = document.querySelector('.break__time__display');
 const encourageDisplay = document.querySelector('#encourage_text');
+const listContainer = document.querySelector('.todo__container');
+const listWrapper = document.querySelector('.todo__wrapper');
+const showHideListBtn = document.querySelector('.close__open__list');
 
 let minutes = 25;
 let breakMinutes = 10;
 let timer;
 let isRunning = false;
 let radius = parseInt(circleEl.getAttribute('r'));
-let circ = 2 * 3.14 * radius;
+let circ = Math.floor(2 * 3.14 * radius) - 5; // get radius from the svg circle | sub 5px from circle to prevent overlap
 let state = 'session';
 let currentTime;
+let screenWidth = document.documentElement.clientWidth;
 
 function startTimer() {
   isRunning = true;
   let secs = (currentTime ? currentTime : getSeconds());
-  // ^^ gets the break time when the session time ends
+  // ^^
+  // gets the break time when the session time ends
+  // and vice versa
 
   timer = setInterval(() => {
     secs -= 1;
@@ -166,7 +172,7 @@ function init() {
 
   counter.textContent = `${min}:${sec}`;
 
-  // main controls
+  // main controls (start, pause, reset)
   startPause.addEventListener('click', e => {
     startPauseTimer();
   });
@@ -180,10 +186,26 @@ function init() {
     }
   });
 
+  // break controls
   addBreakBtn.addEventListener('click', addBreakTime);
   subBreakBtn.addEventListener('click', () => {
     if (breakMinutes > 1) {
       subBreakTime();
+    }
+  });
+
+  showHideListBtn.addEventListener('click', (event) => {
+    let style = window.getComputedStyle(listContainer);
+    let display = style.getPropertyValue('display');
+
+    if (display === 'flex') {
+      listContainer.style.display = 'none';
+      listWrapper.classList.remove('todo_width');
+      event.target.textContent = '>';
+    } else {
+      listContainer.style.display = 'flex';
+      listWrapper.classList.add('todo_width');
+      event.target.textContent = '<';
     }
   });
 }

@@ -1,6 +1,11 @@
 :root {
   --circAnimDur: 0s;
   --circumference: 0px;
+  --mute-black: #272727;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -8,20 +13,24 @@ body {
   background: #4A548C;
 }
 
-.wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  position: relative;
-  width: 60vw;
-  margin: 0 auto;
-}
-
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-.h-4 {
+.white {
+  color: white;
+}
+
+.f-1 {
+  font-size: 2.25em;
+}
+
+.f-4 {
   letter-spacing: 2px;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 #timer_circle {
@@ -37,11 +46,100 @@ body {
   filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.2));
 }
 
+.wrapper {
+  display: flex;
+}
+
+.timer__wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 60vw;
+  margin: 0 auto;
+}
+
 .svg__wrapper {
   position: relative;
   align-self: center;
   width: 75%;
   margin-top: 2em;
+}
+
+.todo__wrapper {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+}
+
+.todo_width {
+  flex-basis: 40vw;
+}
+
+.todo__container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 2em;
+  background: var(--mute-black);
+  align-content: center;
+  text-align: center;
+}
+
+.add__list__btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-top: 2em;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.list__item {
+  position: relative;
+  padding: 1em 0;
+  border-top: solid 1px white;
+}
+
+.list__item:last-child {
+  margin-top: 1em;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+}
+
+.list__content {
+  margin-right: 2em;
+  line-height: 1.5em;
+  /* letter-spacing: 1px; */
+  color: white;
+}
+
+.list__content:focus {
+  outline: none;
+}
+
+.remove__item__btn {
+    width: 20px;
+    padding: 0;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    display: none;
+}
+
+.close__open__list {
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+  height: 60px;
+  width: 30px;
+  background: var(--mute-black);
+  border-radius: 40%;
+  margin-left: -10px;
+  border: none;
+  align-self: center;
 }
 
 tspan {
@@ -127,7 +225,7 @@ tspan {
 .buttons {
   margin: 1em auto;
   padding: 0.25em;
-  background: #272727;
+  background: var(--mute-black);
   width: 60%;
   border-radius: 10px;
 }
@@ -145,4 +243,8 @@ tspan {
 
 .space {
   margin: 0.25em auto;
+}
+
+.left {
+  left: 10vw;
 }
