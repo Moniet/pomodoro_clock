@@ -3,20 +3,30 @@
   --circumference: 0px;
 }
 
+body {
+  font-family: "PT Sans", sans-serif;
+  background: #4A548C;
+}
+
 .wrapper {
-  width: 50vw;
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
+  width: 60vw;
   margin: 0 auto;
 }
 
+.hidden {
+  display: none;
+}
 
-body {
-  font-family: "Noah", sans-serif;
-  background: #7E7E7E;
+.h-4 {
+  letter-spacing: 2px;
 }
 
 #timer_circle {
   stroke-dasharray: var(--circumference);
+  transform: rotate(-90deg);
 }
 
 #timer_circle_boundary {
@@ -24,14 +34,115 @@ body {
 }
 
 #counter_text {
-  text-shadow: 4px 4px 0px rgba(0,0,0,0.05);
+  filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.2));
 }
 
-.button {
-  padding: 0.75em;
+.svg__wrapper {
+  position: relative;
+  align-self: center;
+  width: 75%;
+  margin-top: 2em;
+}
+
+tspan {
+  letter-spacing: 5px;
+}
+
+.start_stop_button {
+  padding: 0;
+  margin: 0 2em;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  background: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  margin-top: 2em;
+  padding: 1em;
+  width: 40%;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.stars * {
+  filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
+}
+
+.shadow {
+  box-shadow: inset 3px 3px 0px rgba(255,255,255,0.05), 3px 3px 0px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.svg__shadow {
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
+}
+
+.start_stop_button, .button {
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .circle__animation {
   transition: var(--circAnimDur);
   stroke-dashoffset: var(--circumference);
+}
+
+.start_button {
+  background-image: url('assets/pomodoro_play.svg');
+}
+
+.timer__controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  margin: 2em auto;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  padding: 0 1em;
+}
+
+.timer__controls__wrapper {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.timer__controls__wrapper:first-child {
+  border-right: solid 2px #373A4A;
+}
+
+.controls__display {
+  font-size: 4em;
+  color: white;
+}
+
+.buttons {
+  margin: 1em auto;
+  padding: 0.25em;
+  background: #272727;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.reset__btn {
+  border: none;
+  background: none;
+}
+
+.btn {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.space {
+  margin: 0.25em auto;
 }
