@@ -61,14 +61,18 @@ body {
 .svg__wrapper {
   position: relative;
   align-self: center;
-  width: 75%;
-  margin-top: 2em;
+  width: 50%;
 }
 
 .todo__wrapper {
   position: relative;
   display: flex;
   min-height: 100vh;
+}
+
+.todo__list__wrapper {
+  margin-top: 1em;
+  word-break: break-all;
 }
 
 .todo_width {
@@ -101,6 +105,11 @@ body {
   position: relative;
   padding: 1em 0;
   border-top: solid 1px white;
+  text-decoration-color: white;
+}
+
+.list__item:hover > button {
+  display: block;
 }
 
 .list__item:last-child {
@@ -140,6 +149,9 @@ body {
   margin-left: -10px;
   border: none;
   align-self: center;
+  position: absolute;
+  left: 100%;
+  z-index: 100;
 }
 
 tspan {
@@ -248,3 +260,45 @@ tspan {
 .left {
   left: 10vw;
 }
+
+.strike {
+  text-decoration: line-through !important;
+  text-decoration-color: white !important;
+}
+
+/*
+
+  make the timer fit large screens well
+
+  make responsive for smaller screens
+    * resize the timer
+    * hide the todolist button
+    * make the todo list accessible with a navbar
+
+*/
+@media screen and (min-width: 1000px) {
+    .svg__wrapper {
+      max-width: 55%;
+    }
+ }
+
+@media screen and (min-width: 992px) {
+  .svg__wrapper {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .svg__wrapper {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .svg__wrapper {
+    width: 75%;
+  }
+  .controls {
+    padding: 0.5em;
+  }
+ }

@@ -14,6 +14,8 @@ const breakDisplay = document.querySelector('.break__time__display');
 const listContainer = document.querySelector('.todo__container');
 const listWrapper = document.querySelector('.todo__wrapper');
 const showHideListBtn = document.querySelector('.close__open__list');
+const addListBtn = document.querySelector('.add__list__btn');
+const toDoListWrapper = document.querySelector('.todo__list__wrapper');
 
 let minutes = 25;
 let breakMinutes = 10;
@@ -162,6 +164,35 @@ function showPauseButton() {
   pauseBtn.classList.remove('hidden');
 }
 
+function addListItem() {
+  const li = document.createElement('li');
+  const div = document.createElement('div');
+  const btn = document.createElement('button');
+
+  li.className = 'list__item';
+  div.className = 'list__content';
+  btn.className = 'remove__item__btn reset__btn btn pointer';
+  btn.innerHTML = '<img src="assets/delete_list_btn.svg" alt="delete list item button">';
+  btn.addEventListener('click', e => strikeListItem(e));
+
+  div.contentEditable = 'true';
+  div.textContent = '...';
+
+  li.append(div, btn);
+  toDoListWrapper.appendChild(li);
+}
+
+function strikeListItem(e) {
+  let textBox = e.target.parentNode.parentNode;
+  let textStyle = textBox.getAttribute('class').split(' ');
+  console.log();
+  if (textStyle.includes('strike')) {
+    textBox.classList.remove('strike');
+  } else {
+    textBox.classList.add('strike');
+  }
+}
+
 function init() {
   let seconds = getSeconds();
   let time = getMinSec(seconds);
@@ -202,8 +233,13 @@ function init() {
       event.target.textContent = '<';
     }
   });
+
+  addListBtn.addEventListener('click', addListItem);
 }
 
 document.addEventListener('DOMContentLoaded', e => {
   init();
+  addListItem();
 });
+
+// add to do list add and remove functionality
