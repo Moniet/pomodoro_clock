@@ -11,7 +11,6 @@ const addBreakBtn = document.querySelector('.add__break__time');
 const subBreakBtn = document.querySelector('.sub__break__time');
 const sessionDisplay = document.querySelector('.session__time__display');
 const breakDisplay = document.querySelector('.break__time__display');
-const encourageDisplay = document.querySelector('#encourage_text');
 const listContainer = document.querySelector('.todo__container');
 const listWrapper = document.querySelector('.todo__wrapper');
 const showHideListBtn = document.querySelector('.close__open__list');
@@ -51,6 +50,7 @@ function startTimer() {
 
       resetTimer();
       startTimer();
+      showPauseButton();
     }
 
     reduceCircle(secs);
@@ -173,25 +173,19 @@ function init() {
   counter.textContent = `${min}:${sec}`;
 
   // main controls (start, pause, reset)
-  startPause.addEventListener('click', e => {
-    startPauseTimer();
-  });
+  startPause.addEventListener('click', startPauseTimer);
   reset.addEventListener('click', resetTimer);
 
   // session controls
   addSessionBtn.addEventListener('click', addSessionTime);
   subSessionBtn.addEventListener('click', () => {
-    if (minutes > 1) {
-      subSessionTime();
-    }
+    if (minutes > 1) subSessionTime();
   });
 
   // break controls
   addBreakBtn.addEventListener('click', addBreakTime);
   subBreakBtn.addEventListener('click', () => {
-    if (breakMinutes > 1) {
-      subBreakTime();
-    }
+    if (breakMinutes > 1) subBreakTime();
   });
 
   showHideListBtn.addEventListener('click', (event) => {
