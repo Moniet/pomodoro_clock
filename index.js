@@ -241,5 +241,4 @@ document.addEventListener('DOMContentLoaded', e => {
   init();
   addListItem();
 });
-
 // add to do list add and remove functionality
