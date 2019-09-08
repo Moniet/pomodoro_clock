@@ -10,7 +10,7 @@
 
 body {
   font-family: "PT Sans", sans-serif;
-  background: #4A548C;
+  background: #4a548c;
 }
 
 .hidden {
@@ -43,7 +43,7 @@ body {
 }
 
 #counter_text {
-  filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.2));
+  filter: drop-shadow(2px 2px 0px rgba(255, 255, 255, 0.2));
 }
 
 .wrapper {
@@ -131,12 +131,12 @@ body {
 }
 
 .remove__item__btn {
-    width: 20px;
-    padding: 0;
-    position: absolute;
-    top: 0.5em;
-    right: 0;
-    display: none;
+  width: 20px;
+  padding: 0;
+  position: absolute;
+  top: 0.5em;
+  right: 0;
+  display: none;
 }
 
 .close__open__list {
@@ -171,30 +171,32 @@ tspan {
 
 .controls {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-self: center;
   margin-top: 2em;
   padding: 1em;
   width: 40%;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
 .stars * {
-  filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
+  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
 }
 
 .shadow {
-  box-shadow: inset 3px 3px 0px rgba(255,255,255,0.05), 3px 3px 0px rgba(0,0,0,0.1);
+  box-shadow: inset 3px 3px 0px rgba(255, 255, 255, 0.05),
+    3px 3px 0px rgba(0, 0, 0, 0.1);
   transition: 0.2s;
 }
 
 .svg__shadow {
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
 }
 
-.start_stop_button, .button {
+.start_stop_button,
+.button {
   cursor: pointer;
 }
 
@@ -208,7 +210,7 @@ tspan {
 }
 
 .start_button {
-  background-image: url('assets/pomodoro_play.svg');
+  background-image: url("assets/pomodoro_play.svg");
 }
 
 .timer__controls {
@@ -216,7 +218,7 @@ tspan {
   justify-content: space-evenly;
   width: 40%;
   margin: 2em auto;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 0 1em;
 }
@@ -227,7 +229,7 @@ tspan {
 }
 
 .timer__controls__wrapper:first-child {
-  border-right: solid 2px #373A4A;
+  border-right: solid 2px #373a4a;
 }
 
 .controls__display {
@@ -277,31 +279,8 @@ tspan {
     * make the todo list accessible with a navbar
 
 */
-@media screen and (min-width: 1000px) {
-    .svg__wrapper {
-      max-width: 55%;
-    }
- }
 
-@media screen and (min-width: 992px) {
-  .svg__wrapper {
-    width: 55%;
-  }
-  .controls__display {
-    font-size: 4em;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .svg__wrapper {
-    width: 60%;
-  }
-  .controls__display {
-    font-size: 3em;
-  }
-}
-
-@media screen and (min-width: 576px) {
+@media (min-width: 320px) {
   .svg__wrapper {
     width: 75%;
   }
@@ -309,6 +288,71 @@ tspan {
     padding: 0.5em;
   }
   .controls__display {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 576px) {
+  .svg__wrapper {
+    width: 75%;
+  }
+  .controls {
+    padding: 1em;
+    width: 70%;
+  }
+  .timer__controls {
+    width: 70%;
+  }
+  .controls__display {
     font-size: 3em;
   }
- }
+  .start_stop_button {
+    width: 5em;
+  }
+  .btn {
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  .svg__wrapper {
+    width: 70%;
+  }
+  .controls__display {
+    font-size: 3em;
+  }
+
+  .start_stop_button {
+    min-width: 5em;
+  }
+  .controls {
+    padding: 1em;
+    max-width: 55%;
+  }
+  .timer__controls {
+    max-width: 55%;
+  }
+}
+
+@media (min-width: 992px) {
+  .svg__wrapper {
+    width: 65%;
+  }
+  .controls__display {
+    font-size: 3em;
+  }
+  .controls {
+    padding: 1em;
+    max-width: 50%;
+  }
+  .timer__controls {
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .svg__wrapper {
+    width: 55%;
+    max-width: 600px;
+  }
+}
