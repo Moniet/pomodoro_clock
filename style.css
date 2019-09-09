@@ -10,7 +10,7 @@
 
 body {
   font-family: "PT Sans", sans-serif;
-  background: #4a548c;
+  background: #4A548C;
 }
 
 .hidden {
@@ -43,11 +43,12 @@ body {
 }
 
 #counter_text {
-  filter: drop-shadow(2px 2px 0px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.2));
 }
 
 .wrapper {
   display: flex;
+  height: 100%;
 }
 
 .timer__wrapper {
@@ -75,12 +76,8 @@ body {
   word-break: break-all;
 }
 
-.todo_width {
-  flex-basis: 40vw;
-}
-
 .todo__container {
-  display: flex;
+  display: none;
   flex-direction: column;
   flex-grow: 1;
   padding: 2em;
@@ -131,12 +128,12 @@ body {
 }
 
 .remove__item__btn {
-  width: 20px;
-  padding: 0;
-  position: absolute;
-  top: 0.5em;
-  right: 0;
-  display: none;
+    width: 20px;
+    padding: 0;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    display: none;
 }
 
 .close__open__list {
@@ -176,27 +173,25 @@ tspan {
   margin-top: 2em;
   padding: 1em;
   width: 40%;
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.1);
   border-radius: 10px;
 }
 
 .stars * {
-  filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.2));
+  filter: drop-shadow(0px 0px 10px rgba(255,255,255,0.2));
 }
 
 .shadow {
-  box-shadow: inset 3px 3px 0px rgba(255, 255, 255, 0.05),
-    3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 3px 3px 0px rgba(255,255,255,0.05), 3px 3px 0px rgba(0,0,0,0.1);
   transition: 0.2s;
 }
 
 .svg__shadow {
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.1));
 }
 
-.start_stop_button,
-.button {
+.start_stop_button, .button {
   cursor: pointer;
 }
 
@@ -210,7 +205,7 @@ tspan {
 }
 
 .start_button {
-  background-image: url("assets/pomodoro_play.svg");
+  background-image: url('assets/pomodoro_play.svg');
 }
 
 .timer__controls {
@@ -218,7 +213,7 @@ tspan {
   justify-content: space-evenly;
   width: 40%;
   margin: 2em auto;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255,255,255,0.1);
   border-radius: 10px;
   padding: 0 1em;
 }
@@ -229,7 +224,7 @@ tspan {
 }
 
 .timer__controls__wrapper:first-child {
-  border-right: solid 2px #373a4a;
+  border-right: solid 2px #373A4A;
 }
 
 .controls__display {
@@ -267,30 +262,41 @@ tspan {
 .strike {
   text-decoration: line-through !important;
   text-decoration-color: white !important;
+  opacity: 0.5;
 }
-
-/*
-
-  make the timer fit large screens well
-
-  make responsive for smaller screens
-    * resize the timer
-    * hide the todolist button
-    * make the todo list accessible with a navbar
-
-*/
 
 @media (min-width: 320px) {
-  .svg__wrapper {
-    width: 75%;
-  }
+  .svg__wrapper { width: 100%; }
   .controls {
     padding: 0.5em;
+    width: 80%;
   }
-  .controls__display {
-    font-size: 2em;
+  .start_stop_button {
+    width: 5em;
   }
-}
+  .controls__display { font-size: 2em; }
+  .timer__wrapper { width: 90%; }
+  .timer__controls { width: 80%; }
+  
+  .todo_width {
+    width: 0;
+    max-width: 0%;
+  }
+  
+  .todo__wrapper {
+    display: none;
+  }
+  
+  .list__item { padding: 0.5em;  }
+  .add__list__btn {  width: 26px; }
+  .remove__item__btn { top: 0.25em; }
+  .close__open__list { 
+    display: none;
+  }
+  .btn {
+     font-size: 1em;
+  }
+ }
 
 @media (min-width: 576px) {
   .svg__wrapper {
@@ -307,31 +313,56 @@ tspan {
     font-size: 3em;
   }
   .start_stop_button {
-    width: 5em;
+    width: 6em;
   }
   .btn {
-    font-size: 1em;
+     font-size: 1em;
   }
-}
+   .todo_width {
+    min-width: 90%;
+    flex-basis: 90vw;
+  } 
+   .todo__wrapper {
+    position: absolute;
+    display: flex;
+    z-index: 10;
+  }
+  
+  .list__item { padding: 1em 0;  }
+  .add__list__btn {  width: 32px; }
+  .remove__item__btn { top: 1em; }
+  .close__open__list { 
+    display: block;
+  }
+ }
+
 
 @media (min-width: 768px) {
   .svg__wrapper {
-    width: 70%;
+    width: 65%;
   }
   .controls__display {
     font-size: 3em;
   }
-
   .start_stop_button {
-    min-width: 5em;
+    max-width: 6em;
   }
   .controls {
-    padding: 1em;
+    padding: 0.75em;
     max-width: 55%;
+    margin-top: 0.5em;
   }
   .timer__controls {
     max-width: 55%;
   }
+  .todo_width {
+    min-width: 70%;
+    max-width: 70%;
+    min-height: 100%;
+  }
+/*   .list__item { padding: 1em 0;  } */
+  .add__list__btn {  width: 32px; } 
+  .remove__item__btn { top: 1em; } 
 }
 
 @media (min-width: 992px) {
@@ -348,11 +379,27 @@ tspan {
   .timer__controls {
     max-width: 50%;
   }
+   .todo__wrapper {
+    position: relative;
+    z-index: 10;
+  }
+  .todo_width {
+    min-width: 40%;
+    max-width: 40%;
+  }
 }
 
 @media (min-width: 1200px) {
-  .svg__wrapper {
-    width: 55%;
-    max-width: 600px;
+    .svg__wrapper {
+      width: 55%;
+      max-width: 600px;
+    }
+  
+  .todo_width {
+    flex-basis: 40vw;
   }
-}
+ }
+
+
+
+
