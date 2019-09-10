@@ -56,19 +56,29 @@ body {
   flex-direction: column;
   position: relative;
   width: 60vw;
+  min-height: 100vh;
   margin: 0 auto;
+  align-self: center;
+  justify-content: center;
 }
 
 .svg__wrapper {
   position: relative;
   align-self: center;
-  width: 50%;
+  width: 70vh;
+  width: 500px;
+  max-width: 500px;
 }
 
 .todo__wrapper {
   position: relative;
   display: flex;
   min-height: 100vh;
+  z-index: 10;
+}
+
+.todo_width {
+  width: 40%;
 }
 
 .todo__list__wrapper {
@@ -170,7 +180,7 @@ tspan {
   display: flex;
   justify-content: space-evenly;
   align-self: center;
-  margin-top: 2em;
+  margin-top: 1em;
   padding: 1em;
   width: 40%;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
@@ -267,197 +277,67 @@ tspan {
   opacity: 0.5;
 }
 
-@media (min-width: 320px) {
-  .svg__wrapper {
-    width: 100%;
+
+@media (max-width: 1200px) {
+  .controls, .timer__controls { width: 55%; }
+  .controls__display { font-size: 3.5em; }
+  .buttons { padding: 0em; }
+}
+
+@media (max-width: 1000px) {
+  .controls, .timer__controls { width: 65%; }
+
+  .todo__wrapper { 
+    position: absolute;
+  }
+  .todo_width { width: 50%; }
+}
+
+@media (max-width: 830px) {
+  .controls, .timer__controls { width: 75%; }
+  /* .svg__wrapper { 
+    width: calc(100vw - 1em);
+    max-width: calc(100vw - 1em);
+  } */
+
+  .todo_width { width: 80%; }
+}
+
+@media (max-width: 730px) {
+  .controls, .timer__controls { width: 90%; }
+}
+
+@media (max-width: 585px) {
+  .controls, .timer__controls { width: 100%; }
+  .svg__wrapper { 
+    width: calc(100vw - 1em);
+    max-width: calc(100vw - 1em);
+  }
+  .timer__wrapper {
+    width: 70vw;
   }
 
-  .controls {
-    padding: 0.5em;
-    width: 80%;
-  }
+  .todo_width { width: 90%; }
+}
 
+@media (max-width: 450px) {
+  .controls { padding: 0.5em; }
+  .timer__controls { width: 100%; }
+  .controls__display { font-size: 3em; }
   .start_stop_button {
-    width: 5em;
+    width: 60px;
+    height: 60px;
   }
-
-  .controls__display {
-    font-size: 2em;
+  .buttons {
+    padding: 0.25em;
   }
-
   .timer__wrapper {
     width: 90%;
   }
-
-  .timer__controls {
-    width: 80%;
-  }
-
-  .todo_width {
-    width: 0;
-    max-width: 0%;
-  }
-
-  .todo__wrapper {
-    display: none;
-  }
-
-  .list__item {
-    padding: 0.5em;
-  }
-
-  .add__list__btn {
-    width: 26px;
-  }
-
-  .remove__item__btn {
-    top: 0.25em;
-  }
-
-  .close__open__list {
-    display: none;
-  }
-
-  .btn {
-    font-size: 1em;
-  }
-}
-
-@media (min-width: 576px) {
-  .svg__wrapper {
-    width: 75%;
-  }
-
-  .controls {
-    padding: 1em;
-    width: 70%;
-  }
-
-  .timer__controls {
-    width: 70%;
-  }
-
-  .controls__display {
-    font-size: 3em;
-  }
-
-  .start_stop_button {
-    width: 6em;
-  }
-
-  .btn {
-    font-size: 1em;
-  }
-
-  .todo_width {
-    min-width: 90%;
-    flex-basis: 90vw;
-  }
-
-  .todo__wrapper {
+  .todo__wrapper { 
     position: absolute;
-    display: flex;
     z-index: 10;
-  }
-
-  .list__item {
-    padding: 1em 0;
-  }
-
-  .add__list__btn {
-    width: 32px;
-  }
-
-  .remove__item__btn {
-    top: 1em;
-  }
-
-  .close__open__list {
-    display: block;
-  }
-}
-
-@media (min-width: 768px) {
-  .svg__wrapper {
-    width: 65%;
-  }
-
-  .controls__display {
-    font-size: 3em;
-  }
-
-  .start_stop_button {
-    max-width: 6em;
-  }
-
-  .controls {
-    padding: 0.75em;
-    max-width: 55%;
-    margin-top: 0.5em;
-  }
-
-  .timer__controls {
-    max-width: 55%;
-  }
-
-  .todo_width {
-    min-width: 70%;
-    max-width: 70%;
-    min-height: 100%;
-  }
-
-  /*   .list__item { padding: 1em 0;  } */
-  .add__list__btn {
-    width: 32px;
-  }
-
-  .remove__item__btn {
-    top: 1em;
-  }
-}
-
-@media (min-width: 992px) {
-  .svg__wrapper {
-    width: 65%;
-  }
-
-  .controls__display {
-    font-size: 3em;
-  }
-
-  .controls {
-    padding: 1em;
-    max-width: 40%;
-  }
-
-  .timer__controls {
-    max-width: 40%;
-  }
-
-  .todo__wrapper {
-    position: relative;
-    z-index: 10;
-  }
-
-  .todo_width {
-    min-width: 40%;
-    max-width: 40%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .svg__wrapper {
-    width: 55%;
-    max-width: 600px;
-  }
-
-  .controls {
-    width: 30%;
-    max-width: 400px;
-  }
-
-  .timer__controls {
-    width: 30%;
-    max-width: 400px;
-  }
+   }
+  .todo_width { width: 95%; }
+  .close__open__list { display: none; }
 }
