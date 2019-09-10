@@ -71,7 +71,7 @@ body {
 }
 
 .todo__wrapper {
-  position: relative;
+  position: absolute;
   display: flex;
   min-height: 100vh;
   z-index: 10;
@@ -277,30 +277,44 @@ tspan {
   opacity: 0.5;
 }
 
-
 @media (max-width: 1200px) {
-  .controls, .timer__controls { width: 55%; }
-  .controls__display { font-size: 3.5em; }
+  .controls, .timer__controls { width: 80%; padding: 1em;}
+  .controls__display { font-size: 4em; }
   .buttons { padding: 0em; }
+  .todo_width { width: 60%; }
+  .start_stop_button { 
+    width: 110px;
+    height: 110px; 
+  }
+  .svg__wrapper {
+    width: 80vw;
+    max-width: 80vw;
+  }
 }
 
 @media (max-width: 1000px) {
-  .controls, .timer__controls { width: 65%; }
+  .controls, .timer__controls { width: 90%; }
 
   .todo__wrapper { 
     position: absolute;
   }
   .todo_width { width: 50%; }
+
+  .start_stop_button { 
+    width: 100px;
+    height: 100px; 
+  }
 }
 
 @media (max-width: 830px) {
-  .controls, .timer__controls { width: 75%; }
-  /* .svg__wrapper { 
-    width: calc(100vw - 1em);
-    max-width: calc(100vw - 1em);
-  } */
-
+  .controls, .timer__controls { width: 100%; }
+  
   .todo_width { width: 80%; }
+
+  .start_stop_button { 
+    width: 90px;
+    height: 90px; 
+  }
 }
 
 @media (max-width: 730px) {
@@ -332,7 +346,8 @@ tspan {
     padding: 0.25em;
   }
   .timer__wrapper {
-    width: 90%;
+    width: 100vw;
+    margin: 0;
   }
   .todo__wrapper { 
     position: absolute;
