@@ -336,7 +336,7 @@ tspan {
 
 @media (max-width: 450px) {
   .controls { padding: 0.5em; }
-  .timer__controls { width: 100%; }
+  .timer__controls { width: calc( 100% - 2em ); }
   .controls__display { font-size: 3em; }
   .start_stop_button {
     width: 60px;
@@ -346,8 +346,8 @@ tspan {
     padding: 0.25em;
   }
   .timer__wrapper {
-    width: 100vw;
-    margin: 0;
+    width: calc(100vw - 2em);
+    margin: 0 auto;
   }
   .todo__wrapper { 
     position: absolute;
