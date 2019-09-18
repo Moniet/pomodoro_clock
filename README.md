@@ -4,7 +4,7 @@ The Pomodoro Technique, is a method for time management by which uses a timer to
 
 The Pomodoro Clock has a to-do list to help keep track of items while having a timer whose intervals are adjustable
 
-I first thought of building a Pomodoro clock while reading the [freecodecamp]() blog online.
+I first thought of building a pomodoro clock while reading the [freecodecamp]() blog online.
 They suggested building a pomodoro clock as a javascript challenge.
 
 I knew I wanted the design to look attractive, so I began creating mockups on Affinity Designer. 
